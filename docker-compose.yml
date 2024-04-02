@@ -3,7 +3,7 @@ version: '3.1'
 services:
   ghost:
     image: tiendau/ghost:5-alpine
-    # restart: unless-stopped
+    restart: unless-stopped
     ports:
       - ${GHOST_PORT}:2368
     environment:
