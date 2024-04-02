@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  ghost:
+    image: tiendau/ghost:5-alpine
+    # restart: unless-stopped
+    ports:
+      - 8080:2368
+    environment:
+      database__client: ${DATABASE_CLIENT}
+      database__connection__host: ${DATABASE_HOST}
+      database__connection__user: ${DATABASE_USERNAME}
+      database__connection__password: ${DATABASE_PASSWORD}
+      database__connection__database: ${DATABASE_NAME}
+      url: ${SITE_URL}
+      NODE_ENV: ${NODE_ENV}
+    env_file: .env
